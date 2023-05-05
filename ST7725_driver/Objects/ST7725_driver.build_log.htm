@@ -1,0 +1,704 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.38.0.0
+Copyright (C) 2022 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Ezra Buki, BukiSoftco, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.38.0.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.19
+Assembler:       Armasm.exe V6.19
+Linker/Locator:  ArmLink.exe V6.19
+Library Manager: ArmAr.exe V6.19
+Hex Converter:   FromElf.exe V6.19
+CPU DLL:         SARMCM3.DLL V5.38.0.0
+Dialog DLL:      DCM.DLL V1.17.5.0
+Target DLL:      UL2CM3.DLL V1.164.8.0
+Dialog DLL:      TCM.DLL V1.56.4.0
+ 
+<h2>Project:</h2>
+C:\Users\user\Desktop\Embedded Projects\Bare Metal\ST7725_driver\ST7725_driver.uvprojx
+Project File Date:  05/05/2023
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.19', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
+Build target 'app'
+main.c(1): warning: In file included from...
+./adc.h(3): warning: // comments are not allowed in this language [-Wcomment]
+#include "stm32f4xx_hal.h"              // Keil::Device:STM32Cube HAL:Common
+                                        ^
+main.c(1): warning: In file included from...
+./adc.h(3): warning: In file included from...
+C:/Users/user/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.0/Drivers/STM32F4xx_HAL_Driver/Inc\stm32f4xx_hal.h(29): warning: In file included from...
+./RTE/Device/STM32F411VETx\stm32f4xx_hal_conf.h(397): warning: In file included from...
+C:/Users/user/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.0/Drivers/STM32F4xx_HAL_Driver/Inc\stm32f4xx_hal_dma.h(109): warning: commas at the end of enumerator lists are a C99-specific feature [-Wc99-extensions]
+  HAL_DMA_STATE_ABORT             = 0x05U,  /*!< DMA Abort state                     */
+                                         ^~
+main.c(1): warning: In file included from...
+./adc.h(6): error: unknown type name 'ADC_HandleTypeDef'
+extern ADC_HandleTypeDef hadc1;
+       ^
+./adc.h(8): warning: no newline at end of file [-Wnewline-eof]
+#endif
+      ^
+main.c(2): warning: In file included from...
+./GLCD_ST7735.h(5): warning: // comments are not allowed in this language [-Wcomment]
+#include "stm32f4xx_hal.h"              // Keil::Device:STM32Cube HAL:Common
+                                        ^
+./GLCD_ST7735.h(356): warning: no newline at end of file [-Wnewline-eof]
+#endif
+      ^
+main.c(9): error: unknown type name 'ADC_HandleTypeDef'
+ADC_HandleTypeDef hadc1;
+^
+main.c(14): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+int  main(){
+         ^
+          void
+main.c(28): warning: implicit declaration of function 'HAL_ADC_Start' [-Wimplicit-function-declaration]
+                HAL_ADC_Start(&hadc1);
+                ^
+main.c(29): warning: implicit declaration of function 'HAL_ADC_PollForConversion' [-Wimplicit-function-declaration]
+                HAL_ADC_PollForConversion(&hadc1,1);
+                ^
+main.c(30): warning: implicit declaration of function 'HAL_ADC_GetValue' [-Wimplicit-function-declaration]
+                sensorValue =  HAL_ADC_GetValue(&hadc1);
+                               ^
+main.c(54): warning: implicit conversion changes signedness: 'int' to 'int16_t' (aka 'short') [-Wsign-conversion]
+            ST7735_DrawString(7, 0, "75%", BLUE );
+            ~~~~~~~~~~~~~~~~~              ^~~~
+./GLCD_ST7735.h(21): note: expanded from macro 'BLUE'
+#define BLUE    0xF800
+                ^~~~~~
+main.c(56): warning: implicit conversion changes signedness: 'int' to 'int16_t' (aka 'short') [-Wsign-conversion]
+            ST7735_DrawString(18, 0, "30", BLUE );
+            ~~~~~~~~~~~~~~~~~              ^~~~
+./GLCD_ST7735.h(21): note: expanded from macro 'BLUE'
+#define BLUE    0xF800
+                ^~~~~~
+main.c(62): warning: no previous prototype for function 'SysTick_Handler' [-Wmissing-prototypes]
+void SysTick_Handler(void)
+     ^
+main.c(62): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void SysTick_Handler(void)
+^
+static 
+main.c(7): warning: no previous extern declaration for non-static variable 'sensorValue' [-Wmissing-variable-declarations]
+volatile int sensorValue;
+             ^
+main.c(7): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+volatile int sensorValue;
+         ^
+13 warnings and 2 errors generated.
+compiling main.c...
+adc.c(1): warning: In file included from...
+./adc.h(3): warning: // comments are not allowed in this language [-Wcomment]
+#include "stm32f4xx_hal.h"              // Keil::Device:STM32Cube HAL:Common
+                                        ^
+adc.c(1): warning: In file included from...
+./adc.h(3): warning: In file included from...
+C:/Users/user/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.0/Drivers/STM32F4xx_HAL_Driver/Inc\stm32f4xx_hal.h(29): warning: In file included from...
+./RTE/Device/STM32F411VETx\stm32f4xx_hal_conf.h(397): warning: In file included from...
+C:/Users/user/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.0/Drivers/STM32F4xx_HAL_Driver/Inc\stm32f4xx_hal_dma.h(109): warning: commas at the end of enumerator lists are a C99-specific feature [-Wc99-extensions]
+  HAL_DMA_STATE_ABORT             = 0x05U,  /*!< DMA Abort state                     */
+                                         ^~
+adc.c(1): warning: In file included from...
+./adc.h(6): error: unknown type name 'ADC_HandleTypeDef'
+extern ADC_HandleTypeDef hadc1;
+       ^
+./adc.h(8): warning: no newline at end of file [-Wnewline-eof]
+#endif
+      ^
+adc.c(8): error: use of undeclared identifier 'ADC_ChannelConfTypeDef'
+          ADC_ChannelConfTypeDef sConfig;
+          ^
+adc.c(10): error: use of undeclared identifier 'ADC_CLOCK_SYNC_PCLK_DIV2'
+          hadc1.Init.ClockPrescaler = ADC_CLOCK_SYNC_PCLK_DIV2;
+                                      ^
+adc.c(11): error: use of undeclared identifier 'ADC_RESOLUTION_12B'
+          hadc1.Init.Resolution = ADC_RESOLUTION_12B;
+                                  ^
+adc.c(16): error: use of undeclared identifier 'ADC_EXTERNALTRIGCONVEDGE_NONE'
+          hadc1.Init.ExternalTrigConvEdge = ADC_EXTERNALTRIGCONVEDGE_NONE;
+                                            ^
+adc.c(17): error: use of undeclared identifier 'ADC_SOFTWARE_START'
+          hadc1.Init.ExternalTrigConv = ADC_SOFTWARE_START;
+                                        ^
+adc.c(18): error: use of undeclared identifier 'ADC_DATAALIGN_RIGHT'
+          hadc1.Init.DataAlign = ADC_DATAALIGN_RIGHT;
+                                 ^
+adc.c(21): error: use of undeclared identifier 'ADC_EOC_SINGLE_CONV'
+   hadc1.Init.EOCSelection = ADC_EOC_SINGLE_CONV;
+                             ^
+adc.c(22): warning: implicit declaration of function 'HAL_ADC_Init' [-Wimplicit-function-declaration]
+        HAL_ADC_Init(&hadc1);
+        ^
+adc.c(24): error: use of undeclared identifier 'sConfig'
+        sConfig.Channel = ADC_CHANNEL_4;
+        ^
+adc.c(24): error: use of undeclared identifier 'ADC_CHANNEL_4'
+        sConfig.Channel = ADC_CHANNEL_4;
+                          ^
+adc.c(25): error: use of undeclared identifier 'sConfig'
+  sConfig.Rank = 1;
+  ^
+adc.c(26): error: use of undeclared identifier 'sConfig'
+  sConfig.SamplingTime = ADC_SAMPLETIME_3CYCLES;
+  ^
+adc.c(26): error: use of undeclared identifier 'ADC_SAMPLETIME_3CYCLES'
+  sConfig.SamplingTime = ADC_SAMPLETIME_3CYCLES;
+                         ^
+adc.c(27): warning: implicit declaration of function 'HAL_ADC_ConfigChannel' [-Wimplicit-function-declaration]
+   HAL_ADC_ConfigChannel(&hadc1, &sConfig);
+   ^
+adc.c(27): error: use of undeclared identifier 'sConfig'
+   HAL_ADC_ConfigChannel(&hadc1, &sConfig);
+                                  ^
+adc.c(32): error: unknown type name 'ADC_HandleTypeDef'
+void HAL_ADC_MspInit(ADC_HandleTypeDef* hadc)
+                     ^
+adc.c(50): error: unknown type name 'ADC_HandleTypeDef'
+void HAL_ADC_MspDeInit(ADC_HandleTypeDef* hadc)
+                       ^
+5 warnings and 16 errors generated.
+compiling adc.c...
+GLCD_ST7735.c(1): warning: In file included from...
+./GLCD_ST7735.h(5): warning: // comments are not allowed in this language [-Wcomment]
+#include "stm32f4xx_hal.h"              // Keil::Device:STM32Cube HAL:Common
+                                        ^
+GLCD_ST7735.c(1): warning: In file included from...
+./GLCD_ST7735.h(5): warning: In file included from...
+C:/Users/user/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.0/Drivers/STM32F4xx_HAL_Driver/Inc\stm32f4xx_hal.h(29): warning: In file included from...
+./RTE/Device/STM32F411VETx\stm32f4xx_hal_conf.h(397): warning: In file included from...
+C:/Users/user/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.0/Drivers/STM32F4xx_HAL_Driver/Inc\stm32f4xx_hal_dma.h(109): warning: commas at the end of enumerator lists are a C99-specific feature [-Wc99-extensions]
+  HAL_DMA_STATE_ABORT             = 0x05U,  /*!< DMA Abort state                     */
+                                         ^~
+GLCD_ST7735.c(1): warning: In file included from...
+./GLCD_ST7735.h(356): warning: no newline at end of file [-Wnewline-eof]
+#endif
+      ^
+GLCD_ST7735.c(2): warning: // comments are not allowed in this language [-Wcomment]
+#include "stm32f4xx_hal.h"              // Keil::Device:STM32Cube HAL:Common
+                                        ^
+GLCD_ST7735.c(1): warning: In file included from...
+./GLCD_ST7735.h(5): warning: In file included from...
+C:/Users/user/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.0/Drivers/STM32F4xx_HAL_Driver/Inc\stm32f4xx_hal.h(29): warning: In file included from...
+./RTE/Device/STM32F411VETx\stm32f4xx_hal_conf.h(509): warning: In file included from...
+C:/Users/user/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.0/Drivers/STM32F4xx_HAL_Driver/Inc\stm32f4xx_hal_spi.h(134): warning: padding struct 'struct __SPI_HandleTypeDef' with 2 bytes to align 'ErrorCode' [-Wpadded]
+  __IO uint32_t              ErrorCode;      /*!< SPI Error code                           */
+                             ^
+GLCD_ST7735.c(1): warning: In file included from...
+./GLCD_ST7735.h(5): warning: In file included from...
+C:/Users/user/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.0/Drivers/STM32F4xx_HAL_Driver/Inc\stm32f4xx_hal.h(29): warning: In file included from...
+./RTE/Device/STM32F411VETx\stm32f4xx_hal_conf.h(397): warning: In file included from...
+C:/Users/user/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.0/Drivers/STM32F4xx_HAL_Driver/Inc\stm32f4xx_hal_dma.h(148): warning: padding struct 'struct __DMA_HandleTypeDef' with 2 bytes to align 'Parent' [-Wpadded]
+  void                       *Parent;                                                          /*!< Parent object state                    */ 
+                              ^
+GLCD_ST7735.c(70): warning: no previous prototype for function 'spi2_16b_init' [-Wmissing-prototypes]
+void spi2_16b_init(void){
+     ^
+GLCD_ST7735.c(70): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void spi2_16b_init(void){
+^
+static 
+GLCD_ST7735.c(75): warning: no previous prototype for function 'lcd7735_senddata' [-Wmissing-prototypes]
+void lcd7735_senddata(unsigned char data) {
+     ^
+GLCD_ST7735.c(75): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void lcd7735_senddata(unsigned char data) {
+^
+static 
+GLCD_ST7735.c(79): warning: initializer for aggregate is not a compile-time constant [-Wc99-extensions]
+        uint8_t masData[]={lsb,msb};
+                           ^~~
+GLCD_ST7735.c(85): warning: unused parameter 'hspi' [-Wunused-parameter]
+void HAL_SPI_MspInit(SPI_HandleTypeDef* hspi)
+                                        ^
+GLCD_ST7735.c(112): warning: unused parameter 'hspi' [-Wunused-parameter]
+void HAL_SPI_MspDeInit(SPI_HandleTypeDef* hspi)
+                                          ^
+GLCD_ST7735.c(131): warning: no previous extern declaration for non-static variable 'StX' [-Wmissing-variable-declarations]
+uint32_t StX=0; 
+         ^
+GLCD_ST7735.c(131): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+uint32_t StX=0; 
+^
+GLCD_ST7735.c(132): warning: no previous extern declaration for non-static variable 'StY' [-Wmissing-variable-declarations]
+uint32_t StY=0; 
+         ^
+GLCD_ST7735.c(132): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+uint32_t StY=0; 
+^
+GLCD_ST7735.c(133): warning: no previous extern declaration for non-static variable 'StTextColor' [-Wmissing-variable-declarations]
+uint16_t StTextColor = YELLOW;
+         ^
+GLCD_ST7735.c(133): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+uint16_t StTextColor = YELLOW;
+^
+GLCD_ST7735.c(163): warning: implicit conversion loses integer precision: 'uint16_t' (aka 'unsigned short') to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
+  uint8_t hi = color >> 8, lo = color;
+                           ~~   ^~~~~
+GLCD_ST7735.c(169): warning: implicit conversion loses integer precision: 'int' to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
+  setAddrWindow(x, y, x+w-1, y+h-1);
+  ~~~~~~~~~~~~~              ~~~^~
+GLCD_ST7735.c(169): warning: implicit conversion loses integer precision: 'int' to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
+  setAddrWindow(x, y, x+w-1, y+h-1);
+  ~~~~~~~~~~~~~       ~~~^~
+GLCD_ST7735.c(169): warning: implicit conversion loses integer precision: 'int16_t' (aka 'short') to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
+  setAddrWindow(x, y, x+w-1, y+h-1);
+  ~~~~~~~~~~~~~    ^
+GLCD_ST7735.c(169): warning: implicit conversion loses integer precision: 'int16_t' (aka 'short') to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
+  setAddrWindow(x, y, x+w-1, y+h-1);
+  ~~~~~~~~~~~~~ ^
+GLCD_ST7735.c(162): warning: no previous prototype for function 'ST7735_FillRect' [-Wmissing-prototypes]
+void ST7735_FillRect(int16_t x, int16_t y, int16_t w, int16_t h, uint16_t color) {
+     ^
+GLCD_ST7735.c(162): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void ST7735_FillRect(int16_t x, int16_t y, int16_t w, int16_t h, uint16_t color) {
+^
+static 
+GLCD_ST7735.c(212): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+  LCD_CS0;            // CS=0   
+         ^~
+GLCD_ST7735.c(241): warning: implicit conversion loses integer precision: 'int16_t' (aka 'short') to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
+  setAddrWindow(x,y,x,y);
+  ~~~~~~~~~~~~~       ^
+GLCD_ST7735.c(241): warning: implicit conversion loses integer precision: 'int16_t' (aka 'short') to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
+  setAddrWindow(x,y,x,y);
+  ~~~~~~~~~~~~~     ^
+GLCD_ST7735.c(241): warning: implicit conversion loses integer precision: 'int16_t' (aka 'short') to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
+  setAddrWindow(x,y,x,y);
+  ~~~~~~~~~~~~~   ^
+GLCD_ST7735.c(241): warning: implicit conversion loses integer precision: 'int16_t' (aka 'short') to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
+  setAddrWindow(x,y,x,y);
+  ~~~~~~~~~~~~~ ^
+GLCD_ST7735.c(237): warning: no previous prototype for function 'ST7735_DrawPixel' [-Wmissing-prototypes]
+void ST7735_DrawPixel(int16_t x, int16_t y, uint16_t color) {
+     ^
+GLCD_ST7735.c(237): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void ST7735_DrawPixel(int16_t x, int16_t y, uint16_t color) {
+^
+static 
+GLCD_ST7735.c(247): warning: implicit conversion loses integer precision: 'uint16_t' (aka 'unsigned short') to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
+  uint8_t hi = color >> 8, lo = color;
+                           ~~   ^~~~~
+GLCD_ST7735.c(252): warning: implicit conversion loses integer precision: 'int' to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
+  setAddrWindow(x, y, x, y+h-1);
+  ~~~~~~~~~~~~~          ~~~^~
+GLCD_ST7735.c(252): warning: implicit conversion loses integer precision: 'int16_t' (aka 'short') to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
+  setAddrWindow(x, y, x, y+h-1);
+  ~~~~~~~~~~~~~       ^
+GLCD_ST7735.c(252): warning: implicit conversion loses integer precision: 'int16_t' (aka 'short') to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
+  setAddrWindow(x, y, x, y+h-1);
+  ~~~~~~~~~~~~~    ^
+GLCD_ST7735.c(252): warning: implicit conversion loses integer precision: 'int16_t' (aka 'short') to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
+  setAddrWindow(x, y, x, y+h-1);
+  ~~~~~~~~~~~~~ ^
+GLCD_ST7735.c(261): warning: implicit conversion loses integer precision: 'uint16_t' (aka 'unsigned short') to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
+  uint8_t hi = color >> 8, lo = color;
+                           ~~   ^~~~~
+GLCD_ST7735.c(266): warning: implicit conversion loses integer precision: 'int16_t' (aka 'short') to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
+  setAddrWindow(x, y, x+w-1, y);
+  ~~~~~~~~~~~~~              ^
+GLCD_ST7735.c(266): warning: implicit conversion loses integer precision: 'int' to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
+  setAddrWindow(x, y, x+w-1, y);
+  ~~~~~~~~~~~~~       ~~~^~
+GLCD_ST7735.c(266): warning: implicit conversion loses integer precision: 'int16_t' (aka 'short') to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
+  setAddrWindow(x, y, x+w-1, y);
+  ~~~~~~~~~~~~~    ^
+GLCD_ST7735.c(266): warning: implicit conversion loses integer precision: 'int16_t' (aka 'short') to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
+  setAddrWindow(x, y, x+w-1, y);
+  ~~~~~~~~~~~~~ ^
+GLCD_ST7735.c(305): warning: implicit conversion loses integer precision: 'int16_t' (aka 'short') to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
+  setAddrWindow(x, y-h+1, x+w-1, y);
+  ~~~~~~~~~~~~~                  ^
+GLCD_ST7735.c(305): warning: implicit conversion loses integer precision: 'int' to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
+  setAddrWindow(x, y-h+1, x+w-1, y);
+  ~~~~~~~~~~~~~           ~~~^~
+GLCD_ST7735.c(305): warning: implicit conversion loses integer precision: 'int' to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
+  setAddrWindow(x, y-h+1, x+w-1, y);
+  ~~~~~~~~~~~~~    ~~~^~
+GLCD_ST7735.c(305): warning: implicit conversion loses integer precision: 'int16_t' (aka 'short') to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
+  setAddrWindow(x, y-h+1, x+w-1, y);
+  ~~~~~~~~~~~~~ ^
+GLCD_ST7735.c(274): warning: no previous prototype for function 'ST7735_DrawBitmap' [-Wmissing-prototypes]
+void ST7735_DrawBitmap(int16_t x, int16_t y, const uint16_t *image, int16_t w, int16_t h){
+     ^
+GLCD_ST7735.c(274): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void ST7735_DrawBitmap(int16_t x, int16_t y, const uint16_t *image, int16_t w, int16_t h){
+^
+static 
+GLCD_ST7735.c(337): warning: implicit conversion changes signedness: 'int16_t' (aka 'short') to 'uint16_t' (aka 'unsigned short') [-Wsign-conversion]
+          ST7735_DrawPixel(x+i, y+j, textColor);
+          ~~~~~~~~~~~~~~~~           ^~~~~~~~~
+GLCD_ST7735.c(337): warning: implicit conversion loses integer precision: 'int' to 'int16_t' (aka 'short') [-Wimplicit-int-conversion]
+          ST7735_DrawPixel(x+i, y+j, textColor);
+          ~~~~~~~~~~~~~~~~      ~^~
+GLCD_ST7735.c(337): warning: implicit conversion loses integer precision: 'int' to 'int16_t' (aka 'short') [-Wimplicit-int-conversion]
+          ST7735_DrawPixel(x+i, y+j, textColor);
+          ~~~~~~~~~~~~~~~~ ~^~
+GLCD_ST7735.c(339): warning: implicit conversion changes signedness: 'int16_t' (aka 'short') to 'uint16_t' (aka 'unsigned short') [-Wsign-conversion]
+          ST7735_FillRect(x+(i*size), y+(j*size), size, size, textColor);
+          ~~~~~~~~~~~~~~~                                     ^~~~~~~~~
+GLCD_ST7735.c(339): warning: implicit conversion loses integer precision: 'int' to 'int16_t' (aka 'short') [-Wimplicit-int-conversion]
+          ST7735_FillRect(x+(i*size), y+(j*size), size, size, textColor);
+          ~~~~~~~~~~~~~~~             ~^~~~~~~~~
+GLCD_ST7735.c(339): warning: implicit conversion loses integer precision: 'int' to 'int16_t' (aka 'short') [-Wimplicit-int-conversion]
+          ST7735_FillRect(x+(i*size), y+(j*size), size, size, textColor);
+          ~~~~~~~~~~~~~~~ ~^~~~~~~~~
+GLCD_ST7735.c(343): warning: implicit conversion changes signedness: 'int16_t' (aka 'short') to 'uint16_t' (aka 'unsigned short') [-Wsign-conversion]
+          ST7735_DrawPixel(x+i, y+j, bgColor);
+          ~~~~~~~~~~~~~~~~           ^~~~~~~
+GLCD_ST7735.c(343): warning: implicit conversion loses integer precision: 'int' to 'int16_t' (aka 'short') [-Wimplicit-int-conversion]
+          ST7735_DrawPixel(x+i, y+j, bgColor);
+          ~~~~~~~~~~~~~~~~      ~^~
+GLCD_ST7735.c(343): warning: implicit conversion loses integer precision: 'int' to 'int16_t' (aka 'short') [-Wimplicit-int-conversion]
+          ST7735_DrawPixel(x+i, y+j, bgColor);
+          ~~~~~~~~~~~~~~~~ ~^~
+GLCD_ST7735.c(345): warning: implicit conversion changes signedness: 'int16_t' (aka 'short') to 'uint16_t' (aka 'unsigned short') [-Wsign-conversion]
+          ST7735_FillRect(x+i*size, y+j*size, size, size, bgColor);
+          ~~~~~~~~~~~~~~~                                 ^~~~~~~
+GLCD_ST7735.c(345): warning: implicit conversion loses integer precision: 'int' to 'int16_t' (aka 'short') [-Wimplicit-int-conversion]
+          ST7735_FillRect(x+i*size, y+j*size, size, size, bgColor);
+          ~~~~~~~~~~~~~~~           ~^~~~~~~
+GLCD_ST7735.c(345): warning: implicit conversion loses integer precision: 'int' to 'int16_t' (aka 'short') [-Wimplicit-int-conversion]
+          ST7735_FillRect(x+i*size, y+j*size, size, size, bgColor);
+          ~~~~~~~~~~~~~~~ ~^~~~~~~
+GLCD_ST7735.c(320): warning: no previous prototype for function 'ST7735_DrawCharS' [-Wmissing-prototypes]
+void ST7735_DrawCharS(int16_t x, int16_t y, char c, int16_t textColor, int16_t bgColor, uint8_t size){
+     ^
+GLCD_ST7735.c(320): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void ST7735_DrawCharS(int16_t x, int16_t y, char c, int16_t textColor, int16_t bgColor, uint8_t size){
+^
+static 
+GLCD_ST7735.c(363): warning: implicit conversion loses integer precision: 'int' to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
+  setAddrWindow(x, y, x+6*size-1, y+8*size-1);
+  ~~~~~~~~~~~~~                   ~~~~~~~~^~
+GLCD_ST7735.c(363): warning: implicit conversion loses integer precision: 'int' to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
+  setAddrWindow(x, y, x+6*size-1, y+8*size-1);
+  ~~~~~~~~~~~~~       ~~~~~~~~^~
+GLCD_ST7735.c(363): warning: implicit conversion loses integer precision: 'int16_t' (aka 'short') to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
+  setAddrWindow(x, y, x+6*size-1, y+8*size-1);
+  ~~~~~~~~~~~~~    ^
+GLCD_ST7735.c(363): warning: implicit conversion loses integer precision: 'int16_t' (aka 'short') to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
+  setAddrWindow(x, y, x+6*size-1, y+8*size-1);
+  ~~~~~~~~~~~~~ ^
+GLCD_ST7735.c(374): warning: implicit conversion changes signedness: 'int16_t' (aka 'short') to 'uint16_t' (aka 'unsigned short') [-Wsign-conversion]
+            pushColor(textColor);
+            ~~~~~~~~~ ^~~~~~~~~
+GLCD_ST7735.c(379): warning: implicit conversion changes signedness: 'int16_t' (aka 'short') to 'uint16_t' (aka 'unsigned short') [-Wsign-conversion]
+            pushColor(bgColor);
+            ~~~~~~~~~ ^~~~~~~
+GLCD_ST7735.c(385): warning: implicit conversion changes signedness: 'int16_t' (aka 'short') to 'uint16_t' (aka 'unsigned short') [-Wsign-conversion]
+        pushColor(bgColor);
+        ~~~~~~~~~ ^~~~~~~
+GLCD_ST7735.c(388): warning: implicit conversion loses integer precision: 'int' to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
+    line = line<<1;   // move up to the next row
+         ~ ~~~~^~~
+GLCD_ST7735.c(353): warning: no previous prototype for function 'ST7735_DrawChar' [-Wmissing-prototypes]
+void ST7735_DrawChar(int16_t x, int16_t y, char c, int16_t textColor, int16_t bgColor, uint8_t size){
+     ^
+GLCD_ST7735.c(353): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void ST7735_DrawChar(int16_t x, int16_t y, char c, int16_t textColor, int16_t bgColor, uint8_t size){
+^
+static 
+GLCD_ST7735.c(392): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+  return ((b & 0xF8) << 8) | ((g & 0xFC) << 3) | (r >> 3);
+  ~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~
+GLCD_ST7735.c(391): warning: no previous prototype for function 'ST7735_Color565' [-Wmissing-prototypes]
+uint16_t ST7735_Color565(uint8_t r, uint8_t g, uint8_t b) {
+         ^
+GLCD_ST7735.c(391): note: declare 'static' if the function is not intended to be used outside of this translation unit
+uint16_t ST7735_Color565(uint8_t r, uint8_t g, uint8_t b) {
+^
+static 
+GLCD_ST7735.c(399): warning: implicit conversion changes signedness: 'int' to 'int16_t' (aka 'short') [-Wsign-conversion]
+    ST7735_DrawCharS(x*6, y*10, *pt, textColor, BLACK, 1);
+    ~~~~~~~~~~~~~~~~      ~^~~
+GLCD_ST7735.c(399): warning: implicit conversion changes signedness: 'int' to 'int16_t' (aka 'short') [-Wsign-conversion]
+    ST7735_DrawCharS(x*6, y*10, *pt, textColor, BLACK, 1);
+    ~~~~~~~~~~~~~~~~ ~^~
+GLCD_ST7735.c(412): warning: no previous prototype for function 'ST7735_PlotClear' [-Wmissing-prototypes]
+void ST7735_PlotClear(int32_t ymin, int32_t ymax){
+     ^
+GLCD_ST7735.c(412): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void ST7735_PlotClear(int32_t ymin, int32_t ymax){
+^
+static 
+GLCD_ST7735.c(438): warning: implicit conversion loses integer precision: 'int32_t' (aka 'int') to 'int16_t' (aka 'short') [-Wimplicit-int-conversion]
+  ST7735_DrawPixel(X,   j,  BLUE);
+  ~~~~~~~~~~~~~~~~      ^
+GLCD_ST7735.c(438): warning: implicit conversion loses integer precision: 'int32_t' (aka 'int') to 'int16_t' (aka 'short') [-Wimplicit-int-conversion]
+  ST7735_DrawPixel(X,   j,  BLUE);
+  ~~~~~~~~~~~~~~~~ ^
+GLCD_ST7735.c(439): warning: implicit conversion loses integer precision: 'int32_t' (aka 'int') to 'int16_t' (aka 'short') [-Wimplicit-int-conversion]
+  ST7735_DrawPixel(X+1, j,  BLUE);
+  ~~~~~~~~~~~~~~~~      ^
+GLCD_ST7735.c(439): warning: implicit conversion loses integer precision: 'int' to 'int16_t' (aka 'short') [-Wimplicit-int-conversion]
+  ST7735_DrawPixel(X+1, j,  BLUE);
+  ~~~~~~~~~~~~~~~~ ~^~
+GLCD_ST7735.c(440): warning: implicit conversion loses integer precision: 'int' to 'int16_t' (aka 'short') [-Wimplicit-int-conversion]
+  ST7735_DrawPixel(X,   j+1,BLUE);
+  ~~~~~~~~~~~~~~~~      ~^~
+GLCD_ST7735.c(440): warning: implicit conversion loses integer precision: 'int32_t' (aka 'int') to 'int16_t' (aka 'short') [-Wimplicit-int-conversion]
+  ST7735_DrawPixel(X,   j+1,BLUE);
+  ~~~~~~~~~~~~~~~~ ^
+GLCD_ST7735.c(441): warning: implicit conversion loses integer precision: 'int' to 'int16_t' (aka 'short') [-Wimplicit-int-conversion]
+  ST7735_DrawPixel(X+1, j+1,BLUE);
+  ~~~~~~~~~~~~~~~~      ~^~
+GLCD_ST7735.c(441): warning: implicit conversion loses integer precision: 'int' to 'int16_t' (aka 'short') [-Wimplicit-int-conversion]
+  ST7735_DrawPixel(X+1, j+1,BLUE);
+  ~~~~~~~~~~~~~~~~ ~^~
+GLCD_ST7735.c(454): warning: implicit conversion loses integer precision: 'int' to 'int16_t' (aka 'short') [-Wimplicit-int-conversion]
+  ST7735_DrawPixel(TimeIndex + 11, 116 - data1, color1);
+  ~~~~~~~~~~~~~~~~                 ~~~~^~~~~~~
+GLCD_ST7735.c(454): warning: implicit conversion loses integer precision: 'int' to 'int16_t' (aka 'short') [-Wimplicit-int-conversion]
+  ST7735_DrawPixel(TimeIndex + 11, 116 - data1, color1);
+  ~~~~~~~~~~~~~~~~ ~~~~~~~~~~^~~~
+GLCD_ST7735.c(455): warning: implicit conversion loses integer precision: 'int' to 'int16_t' (aka 'short') [-Wimplicit-int-conversion]
+  ST7735_DrawPixel(TimeIndex + 11, 115 - data1, color1);
+  ~~~~~~~~~~~~~~~~                 ~~~~^~~~~~~
+GLCD_ST7735.c(455): warning: implicit conversion loses integer precision: 'int' to 'int16_t' (aka 'short') [-Wimplicit-int-conversion]
+  ST7735_DrawPixel(TimeIndex + 11, 115 - data1, color1);
+  ~~~~~~~~~~~~~~~~ ~~~~~~~~~~^~~~
+GLCD_ST7735.c(462): warning: implicit conversion loses integer precision: 'int' to 'int16_t' (aka 'short') [-Wimplicit-int-conversion]
+  ST7735_DrawFastVLine(TimeIndex + 11, 17, 100, PlotBGColor);
+  ~~~~~~~~~~~~~~~~~~~~ ~~~~~~~~~~^~~~
+GLCD_ST7735.c(465): warning: no previous extern declaration for non-static variable 'lastj' [-Wmissing-variable-declarations]
+int32_t lastj=0;
+        ^
+GLCD_ST7735.c(465): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+int32_t lastj=0;
+^
+GLCD_ST7735.c(483): warning: implicit conversion loses integer precision: 'int32_t' (aka 'int') to 'int16_t' (aka 'short') [-Wimplicit-int-conversion]
+      ST7735_DrawPixel(X,   i,   BLUE) ;
+      ~~~~~~~~~~~~~~~~      ^
+GLCD_ST7735.c(483): warning: implicit conversion loses integer precision: 'int32_t' (aka 'int') to 'int16_t' (aka 'short') [-Wimplicit-int-conversion]
+      ST7735_DrawPixel(X,   i,   BLUE) ;
+      ~~~~~~~~~~~~~~~~ ^
+GLCD_ST7735.c(484): warning: implicit conversion loses integer precision: 'int32_t' (aka 'int') to 'int16_t' (aka 'short') [-Wimplicit-int-conversion]
+      ST7735_DrawPixel(X+1, i,   BLUE) ;
+      ~~~~~~~~~~~~~~~~      ^
+GLCD_ST7735.c(484): warning: implicit conversion loses integer precision: 'int' to 'int16_t' (aka 'short') [-Wimplicit-int-conversion]
+      ST7735_DrawPixel(X+1, i,   BLUE) ;
+      ~~~~~~~~~~~~~~~~ ~^~
+GLCD_ST7735.c(488): warning: implicit conversion loses integer precision: 'int32_t' (aka 'int') to 'int16_t' (aka 'short') [-Wimplicit-int-conversion]
+      ST7735_DrawPixel(X,   i,   BLUE) ;
+      ~~~~~~~~~~~~~~~~      ^
+GLCD_ST7735.c(488): warning: implicit conversion loses integer precision: 'int32_t' (aka 'int') to 'int16_t' (aka 'short') [-Wimplicit-int-conversion]
+      ST7735_DrawPixel(X,   i,   BLUE) ;
+      ~~~~~~~~~~~~~~~~ ^
+GLCD_ST7735.c(489): warning: implicit conversion loses integer precision: 'int32_t' (aka 'int') to 'int16_t' (aka 'short') [-Wimplicit-int-conversion]
+      ST7735_DrawPixel(X+1, i,   BLUE) ;
+      ~~~~~~~~~~~~~~~~      ^
+GLCD_ST7735.c(489): warning: implicit conversion loses integer precision: 'int' to 'int16_t' (aka 'short') [-Wimplicit-int-conversion]
+      ST7735_DrawPixel(X+1, i,   BLUE) ;
+      ~~~~~~~~~~~~~~~~ ~^~
+GLCD_ST7735.c(492): warning: implicit conversion loses integer precision: 'int32_t' (aka 'int') to 'int16_t' (aka 'short') [-Wimplicit-int-conversion]
+    ST7735_DrawPixel(X,   j,   BLUE) ;
+    ~~~~~~~~~~~~~~~~      ^
+GLCD_ST7735.c(492): warning: implicit conversion loses integer precision: 'int32_t' (aka 'int') to 'int16_t' (aka 'short') [-Wimplicit-int-conversion]
+    ST7735_DrawPixel(X,   j,   BLUE) ;
+    ~~~~~~~~~~~~~~~~ ^
+GLCD_ST7735.c(493): warning: implicit conversion loses integer precision: 'int32_t' (aka 'int') to 'int16_t' (aka 'short') [-Wimplicit-int-conversion]
+    ST7735_DrawPixel(X+1, j,   BLUE) ;
+    ~~~~~~~~~~~~~~~~      ^
+GLCD_ST7735.c(493): warning: implicit conversion loses integer precision: 'int' to 'int16_t' (aka 'short') [-Wimplicit-int-conversion]
+    ST7735_DrawPixel(X+1, j,   BLUE) ;
+    ~~~~~~~~~~~~~~~~ ~^~
+GLCD_ST7735.c(467): warning: no previous prototype for function 'ST7735_PlotLine' [-Wmissing-prototypes]
+void ST7735_PlotLine(int32_t y)
+     ^
+GLCD_ST7735.c(467): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void ST7735_PlotLine(int32_t y)
+^
+static 
+GLCD_ST7735.c(504): warning: implicit conversion loses integer precision: 'int' to 'int16_t' (aka 'short') [-Wimplicit-int-conversion]
+  ST7735_DrawFastVLine(X, j, 159-j,BLACK);
+  ~~~~~~~~~~~~~~~~~~~~       ~~~^~
+GLCD_ST7735.c(504): warning: implicit conversion loses integer precision: 'int32_t' (aka 'int') to 'int16_t' (aka 'short') [-Wimplicit-int-conversion]
+  ST7735_DrawFastVLine(X, j, 159-j,BLACK);
+  ~~~~~~~~~~~~~~~~~~~~    ^
+GLCD_ST7735.c(504): warning: implicit conversion loses integer precision: 'int32_t' (aka 'int') to 'int16_t' (aka 'short') [-Wimplicit-int-conversion]
+  ST7735_DrawFastVLine(X, j, 159-j,BLACK);
+  ~~~~~~~~~~~~~~~~~~~~ ^
+GLCD_ST7735.c(498): warning: no previous prototype for function 'ST7735_PlotBar' [-Wmissing-prototypes]
+void ST7735_PlotBar(int32_t y){
+     ^
+GLCD_ST7735.c(498): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void ST7735_PlotBar(int32_t y){
+^
+static 
+GLCD_ST7735.c(526): warning: no previous prototype for function 'lcd7735_at' [-Wmissing-prototypes]
+void lcd7735_at(unsigned char startX, unsigned char startY, unsigned char stopX, unsigned char stopY) {
+     ^
+GLCD_ST7735.c(526): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void lcd7735_at(unsigned char startX, unsigned char startY, unsigned char stopX, unsigned char stopY) {
+^
+static 
+GLCD_ST7735.c(558): warning: implicit conversion loses integer precision: 'int' to 'int16_t' (aka 'short') [-Wimplicit-int-conversion]
+    ST7735_DrawPixel(i, 141, axisColor);
+    ~~~~~~~~~~~~~~~~ ^
+GLCD_ST7735.c(561): warning: implicit conversion loses integer precision: 'int' to 'int16_t' (aka 'short') [-Wimplicit-int-conversion]
+    ST7735_DrawPixel(9, i, axisColor);
+    ~~~~~~~~~~~~~~~~    ^
+GLCD_ST7735.c(565): warning: implicit conversion changes signedness: 'uint16_t' (aka 'unsigned short') to 'int16_t' (aka 'short') [-Wsign-conversion]
+    ST7735_DrawChar(i, 145, *xLabel, axisColor, bgColor, 1);
+    ~~~~~~~~~~~~~~~                             ^~~~~~~
+GLCD_ST7735.c(565): warning: implicit conversion changes signedness: 'uint16_t' (aka 'unsigned short') to 'int16_t' (aka 'short') [-Wsign-conversion]
+    ST7735_DrawChar(i, 145, *xLabel, axisColor, bgColor, 1);
+    ~~~~~~~~~~~~~~~                  ^~~~~~~~~
+GLCD_ST7735.c(565): warning: implicit conversion loses integer precision: 'int' to 'int16_t' (aka 'short') [-Wimplicit-int-conversion]
+    ST7735_DrawChar(i, 145, *xLabel, axisColor, bgColor, 1);
+    ~~~~~~~~~~~~~~~ ^
+GLCD_ST7735.c(572): warning: implicit conversion changes signedness: 'uint16_t' (aka 'unsigned short') to 'int16_t' (aka 'short') [-Wsign-conversion]
+      ST7735_DrawChar(0, i, *yLabel2, label2Color, bgColor, 1);
+      ~~~~~~~~~~~~~~~                              ^~~~~~~
+GLCD_ST7735.c(572): warning: implicit conversion changes signedness: 'uint16_t' (aka 'unsigned short') to 'int16_t' (aka 'short') [-Wsign-conversion]
+      ST7735_DrawChar(0, i, *yLabel2, label2Color, bgColor, 1);
+      ~~~~~~~~~~~~~~~                 ^~~~~~~~~~~
+GLCD_ST7735.c(572): warning: implicit conversion loses integer precision: 'int' to 'int16_t' (aka 'short') [-Wimplicit-int-conversion]
+      ST7735_DrawChar(0, i, *yLabel2, label2Color, bgColor, 1);
+      ~~~~~~~~~~~~~~~    ^
+GLCD_ST7735.c(581): warning: implicit conversion changes signedness: 'uint16_t' (aka 'unsigned short') to 'int16_t' (aka 'short') [-Wsign-conversion]
+   ST7735_DrawChar(0, i, *yLabel1, label1Color, bgColor, 1);
+   ~~~~~~~~~~~~~~~                              ^~~~~~~
+GLCD_ST7735.c(581): warning: implicit conversion changes signedness: 'uint16_t' (aka 'unsigned short') to 'int16_t' (aka 'short') [-Wsign-conversion]
+   ST7735_DrawChar(0, i, *yLabel1, label1Color, bgColor, 1);
+   ~~~~~~~~~~~~~~~                 ^~~~~~~~~~~
+GLCD_ST7735.c(581): warning: implicit conversion loses integer precision: 'int' to 'int16_t' (aka 'short') [-Wimplicit-int-conversion]
+   ST7735_DrawChar(0, i, *yLabel1, label1Color, bgColor, 1);
+   ~~~~~~~~~~~~~~~    ^
+GLCD_ST7735.c(43): warning: no previous extern declaration for non-static variable 'hspi2' [-Wmissing-variable-declarations]
+SPI_HandleTypeDef hspi2;
+                  ^
+GLCD_ST7735.c(43): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+SPI_HandleTypeDef hspi2;
+^
+GLCD_ST7735.c(427): warning: no previous extern declaration for non-static variable 'Ymax' [-Wmissing-variable-declarations]
+int32_t Ymax, Ymin, Yrange;  
+        ^
+GLCD_ST7735.c(427): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+int32_t Ymax, Ymin, Yrange;  
+^
+GLCD_ST7735.c(427): warning: no previous extern declaration for non-static variable 'Ymin' [-Wmissing-variable-declarations]
+int32_t Ymax, Ymin, Yrange;  
+              ^
+GLCD_ST7735.c(427): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+int32_t Ymax, Ymin, Yrange;  
+^
+GLCD_ST7735.c(408): warning: no previous extern declaration for non-static variable 'X' [-Wmissing-variable-declarations]
+int32_t Ymax,Ymin,X;        // X goes from 0 to 127
+                  ^
+GLCD_ST7735.c(408): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+int32_t Ymax,Ymin,X;        // X goes from 0 to 127
+^
+GLCD_ST7735.c(427): warning: no previous extern declaration for non-static variable 'Yrange' [-Wmissing-variable-declarations]
+int32_t Ymax, Ymin, Yrange;  
+                    ^
+GLCD_ST7735.c(427): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+int32_t Ymax, Ymin, Yrange;  
+^
+GLCD_ST7735.c(426): warning: no previous extern declaration for non-static variable 'TimeIndex' [-Wmissing-variable-declarations]
+int TimeIndex;               
+    ^
+GLCD_ST7735.c(426): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+int TimeIndex;               
+^
+GLCD_ST7735.c(428): warning: no previous extern declaration for non-static variable 'PlotBGColor' [-Wmissing-variable-declarations]
+uint16_t PlotBGColor; 
+         ^
+GLCD_ST7735.c(428): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+uint16_t PlotBGColor; 
+^
+118 warnings generated.
+compiling GLCD_ST7735.c...
+".\Objects\ST7725_driver.axf" - 18 Error(s), 136 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.9.0.pack
+                ARM.CMSIS.5.9.0
+                CMSIS (Common Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.6.0
+
+Package Vendor: Keil
+                https://www.keil.com/pack/Keil.STM32F4xx_DFP.2.17.0.pack
+                Keil.STM32F4xx_DFP.2.17.0
+                STMicroelectronics STM32F4 Series Device Support, Drivers and Examples
+   * Component: STM32Cube Framework Version: 1.0.0
+   * Component: Classic Version: 1.8.1
+   * Component: Common Version: 1.8.1
+   * Component: Cortex Version: 1.8.1
+   * Component: DMA Version: 1.8.1
+   * Component: GPIO Version: 1.8.1
+   * Component: PWR Version: 1.8.1
+   * Component: RCC Version: 1.8.1
+   * Component: SPI Version: 1.8.1
+   * Component: Startup Version: 2.6.3
+
+<h2>Collection of Component include folders:</h2>
+  ./RTE/Device/STM32F411VETx
+  ./RTE/_app
+  C:/Users/user/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include
+  C:/Users/user/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include
+  C:/Users/user/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.0/Drivers/STM32F4xx_HAL_Driver/Inc
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ::Device:STM32Cube Framework:1.0.0 (API)
+
+   * Component: ARM::CMSIS:CORE:5.6.0
+
+   * Component: Keil::Device:STM32Cube Framework:Classic:1.8.1
+      Include file:  MDK/Templates/Inc/stm32f4xx_hal_conf.h
+      Include file:  MDK/Templates/Inc/stm32f4xx_it.h
+      Include file:  CMSIS/Driver/Config/RTE_Device.h
+      Source file:   MDK/Templates/Src/stm32f4xx_hal_msp.c
+      Source file:   MDK/Templates/Src/stm32f4xx_it.c
+      Source file:   MDK/Templates_LL/Src/main.c
+      Include file:  MDK/Templates/Inc/main.h
+      Include file:  MDK/Templates_LL/Inc/main.h
+      Source file:   MDK/Templates/Src/main.c
+
+   * Component: Keil::Device:STM32Cube HAL:Common:1.8.1
+      Source file:   Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c
+      Include file:  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
+
+   * Component: Keil::Device:STM32Cube HAL:Cortex:1.8.1
+      Source file:   Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c
+
+   * Component: Keil::Device:STM32Cube HAL:DMA:1.8.1
+      Source file:   Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c
+      Source file:   Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c
+
+   * Component: Keil::Device:STM32Cube HAL:GPIO:1.8.1
+      Source file:   Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c
+
+   * Component: Keil::Device:STM32Cube HAL:PWR:1.8.1
+      Source file:   Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c
+      Source file:   Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c
+
+   * Component: Keil::Device:STM32Cube HAL:RCC:1.8.1
+      Source file:   Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c
+      Source file:   Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c
+
+   * Component: Keil::Device:STM32Cube HAL:SPI:1.8.1
+      Source file:   Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c
+
+   * Component: Keil::Device:Startup:2.6.3
+      Source file:   MDK/Device/Source/ARM/STM32F411xx_OPT.s
+      Source file:   MDK/Device/Source/ARM/STM32F4xx_OTP.s
+      Include file:  Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
+      Source file:   Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f411xe.s
+      Source file:   Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/system_stm32f4xx.c
+Target not created.
+Build Time Elapsed:  00:00:09
+</pre>
+</body>
+</html>
